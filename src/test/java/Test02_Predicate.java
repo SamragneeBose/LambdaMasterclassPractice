@@ -54,6 +54,7 @@ public class Test02_Predicate {
         Predicate<String> p1=s -> s.length()==4;
         Predicate<String> p2=s -> s.startsWith("J");
 
+        // p1.and(p2).negate();
         Predicate<String> p3=s->p1.test(s)^p2.test(s); // TODO
 
         assertThat(p3.test("True")).isTrue();
