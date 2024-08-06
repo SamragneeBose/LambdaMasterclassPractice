@@ -18,10 +18,10 @@ public class Test01_Consumer {
     public void consumer_1()
     {
         // (List<String> list)->list.clear()
-        Consumer<List<String>> consumer= List::clear; // TODO
+        Consumer<List<String>> consumer = List::clear; // TODO
 
 
-        List<String> list=new ArrayList<>(Arrays.asList("a", "b", "c"));
+        List<String> list = new ArrayList<>(Arrays.asList("a", "b", "c"));
 
         consumer.accept(list);
 
@@ -36,12 +36,12 @@ public class Test01_Consumer {
     @Test
     public void consumer_2()
     {
-        Consumer<List<String>> c1=list -> list.add("first");
-        Consumer<List<String>> c2=list -> list.add("second");
+        Consumer<List<String>> c1 = list -> list.add("first");
+        Consumer<List<String>> c2 = list -> list.add("second");
 
-        Consumer<List<String>> consumer=c1.andThen(c2); // TODO
+        Consumer<List<String>> consumer = c1.andThen(c2); // TODO
 
-        List<String> list=new ArrayList<>(Arrays.asList("a", "b", "c"));
+        List<String> list = new ArrayList<>(Arrays.asList("a", "b", "c"));
 
         consumer.accept(list);
         assertThat(list).containsExactly("a", "b", "c", "first", "second");

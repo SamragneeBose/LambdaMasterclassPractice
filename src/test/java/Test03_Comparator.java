@@ -32,7 +32,7 @@ public class Test03_Comparator {
                         .thenComparing(Person::getFirstName)
                         .thenComparing(Person::getAge); // TODO
 
-        Comparator<Person> cmpNull=Comparator.nullsLast(cmp); // TODO
+        Comparator<Person> cmpNull = Comparator.nullsLast(cmp); // TODO
         */
 
         Comparator<Person> cmp = Comparator.nullsLast(
